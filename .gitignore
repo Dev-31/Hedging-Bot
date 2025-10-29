@@ -1,0 +1,24 @@
+﻿# Python cache & environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+.venv/
+
+# IDE & editor files
+.vscode/
+.idea/
+
+# Data & large files
+*.webm
+*.mp4
+*.avi
+*.zip
+*.tar
+*.gz
+
+# OS files
+.DS_Store
+Thumbs.db
