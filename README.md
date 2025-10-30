@@ -1,80 +1,68 @@
-# Hedging-Bot
-🧠 Spot Exposure Hedging Bot
+# Spot Exposure Hedging Bot
 
-A working prototype of a risk management system that monitors real-time spot positions and automatically hedges directional exposure using perpetual futures or options.
+This project is a working prototype of an automated risk management system that monitors real-time spot positions and dynamically hedges directional exposure using perpetual futures or options.  
+The system integrates with live cryptocurrency exchange APIs and provides Telegram-based interactive control for monitoring and execution.
 
-This project showcases a fully functional Python-based hedging engine integrated with Telegram for interactive control. It connects to live cryptocurrency exchange APIs (OKX, Bybit, Deribit) to fetch market data, calculate risk metrics, and execute simulated hedge actions. Designed with modularity and extensibility in mind, it demonstrates how automated risk management can be built around real-time market analytics.
+---
 
-⚙️ Core Features
+## Project Overview
+The Spot Exposure Hedging Bot automates the process of portfolio hedging in crypto markets.  
+It calculates risk metrics, monitors exposures, and executes hedge actions to maintain delta neutrality or manage volatility risks.  
+The bot can operate in both manual and automated modes.
 
-📊 Real-Time Risk Calculation
+---
 
-Computes Delta, Gamma, Theta, Vega for options.
+## Core Features
 
-Calculates hedge ratios for perpetual futures using correlation and beta.
+### Real-Time Risk Calculation
+- Computes key option greeks: Delta, Gamma, Theta, Vega.  
+- Calculates hedge ratios for perpetual futures using correlation and beta.  
+- Tracks portfolio-level VaR, drawdown, and correlation matrices.
 
-Monitors portfolio-level VaR, drawdown, and correlation matrices.
+### Automated Hedging Logic
+- Supports delta-neutral and options-based hedging strategies.  
+- Allows both manual and automated hedge execution.  
+- Includes transaction cost and slippage estimation for realistic modeling.  
+- Implements configurable thresholds for hedge triggers.
 
-🤖 Automated Hedging Logic
+### Telegram Bot Integration
+- Sends interactive alerts and portfolio updates.  
+- Accepts commands such as `/monitor_risk`, `/auto_hedge`, `/hedge_now`, and `/hedge_status`.  
+- Provides inline buttons for quick actions like “Hedge Now” or “Adjust Threshold”.
 
-Implements delta-neutral, options-based, and dynamic rebalancing strategies.
+### Portfolio Analytics
+- Visualizes portfolio exposures (Delta, Gamma, Theta, Vega).  
+- Offers scenario analysis and stress testing.  
+- Provides performance summaries and P&L breakdowns via Telegram.
 
-Supports manual and auto-execution with configurable thresholds.
+---
 
-Includes transaction cost and slippage estimation for realistic decisions.
+## Tech Stack
+- **Language:** Python 3.10+  
+- **Libraries:** `ccxt`, `pandas`, `NumPy`, `Matplotlib`, `TA-Lib`, `python-telegram-bot`  
+- **Concurrency:** `asyncio`, `multithreading` for real-time data handling  
+- **Exchanges:** OKX, Bybit, Deribit (via public/demo APIs)  
+- **Environment:** Works on Kaggle, Colab, or local Python environments  
 
-💬 Telegram Bot Integration
+---
 
-Interactive risk alerts and performance updates.
+## Highlights
+- Real-market integration (in demo mode using public exchange APIs).  
+- Modular architecture for extending strategies or replacing APIs.  
+- Designed for lightweight deployment and testing.  
+- Reliable error handling and logging for production-like performance.  
+- Built as an educational and practical demonstration of quantitative risk automation.
 
-Commands like /monitor_risk, /auto_hedge, /hedge_now, /hedge_status.
+---
 
-Inline buttons for actions such as “Hedge Now”, “Adjust Threshold”, “View Analytics”.
+## Future Enhancements
+- Machine learning for volatility forecasting and hedge timing.  
+- Multi-asset portfolio optimization.  
+- Advanced option strategies (Iron Condors, Collars, Butterflies).  
+- Backtesting framework for historical performance validation.  
+- Web-based dashboard for visualization and user control.
 
-📈 Portfolio Analytics
+---
 
-Real-time portfolio exposures (Delta, Gamma, Theta, Vega).
-
-Stress testing and scenario analysis.
-
-P&L attribution and risk summaries delivered through Telegram.
-
-🧩 Tech Stack
-
-Python 3.10+
-
-ccxt (for exchange APIs: OKX, Bybit, Deribit)
-
-pandas, NumPy, Matplotlib, TA-Lib
-
-python-telegram-bot (for Telegram integration)
-
-asyncio / multithreading for real-time data handling
-
-logging & error handling for production reliability
-
-🚀 Highlights
-
-Real-market integration (demo mode using public API data).
-
-Modular architecture for strategy extension and API replacement.
-
-Easily deployable on Kaggle/Colab or any lightweight Python environment.
-
-Designed for demonstration, testing, and future research on risk automation.
-
-🧠 Future Enhancements
-
-Machine-learning-based volatility forecasting and hedge timing.
-
-Multi-asset portfolio management.
-
-Advanced options strategies (Iron Condors, Collars, Butterflies).
-
-Backtesting engine for historical performance validation.
-
-Web-based dashboard for visualization and control.
-
-💡 Note
-
-This is a working prototype that connects to real market prices, applies risk logic, and provides smart Telegram alerts to the user. It’s designed to be simple, testable, and educational — demonstrating how quantitative risk management principles can be automated end-to-end.
+## Author
+Dev Sopariwala
